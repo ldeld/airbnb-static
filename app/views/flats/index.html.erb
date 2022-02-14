@@ -1,0 +1,11 @@
+<h1>Flats</h1>
+<ul>
+  <%# (This is a comment) Iterate over all flats  %>
+  <% @flats.each do |flat| %>
+    <li>
+      <%# Generate a link to the url flats/:id using the flat_path helper %>
+      <%# The flat path helper requires an argument to know which id to point to %>
+      <%= link_to "#{flat["name"]} - #{flat["price"]}€", flat_path(flat["id"]) %>
+    </li>
+  <% end %>
+</ul>
